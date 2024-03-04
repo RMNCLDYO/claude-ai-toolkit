@@ -21,20 +21,6 @@ class Client:
             "content-type": "application/json",
             "x-api-key": self.api_key
         }
-    
-    def get(self, endpoint):
-        loading = Loading()
-        url = f"{self.base_url}/{self.version}/{endpoint}"
-        try:
-            loading.start()
-            response = requests.get(url, headers=self.headers)
-            response = response.json()
-            return response
-        except Exception as e:
-            print(f"HTTP Error: {e}")
-            raise
-        finally:
-            loading.stop()
 
     def post(self, endpoint, data):
         loading = Loading()
