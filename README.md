@@ -27,15 +27,19 @@
 
 ## Overview
 
-The Claude AI Toolkit is a versatile API wrapper and command-line interface designed to simplify interactions with Anthropic's Claude 3 family of large language models. This toolkit facilitates easy access to the latest Claude models, including Opus, Sonnet, and Haiku, for tasks involving language understanding, conversation, coding, and vision processing. Whether you're a beginner in AI or an experienced developer, the Claude AI Toolkit is built to enhance your productivity and streamline your development process with Claude.
+The Claude AI Toolkit provides a comprehensive (lightweight) API wrapper and command-line interface for interacting with Anthropic's Claude 3 'Opus', 'Sonnet' and 'Haiku' large language models. It simplifies complex API calls into accessible commands, facilitating tasks like multi-turn chat (chatbot), text generation, and image captioning & analysis functionality. This toolkit is ideal for everyday users who prefer the terminal, or users, developers, and researchers looking to integrate advanced AI capabilities into their projects without the need to understand the intricacies of direct API communication.
 
 ## Features
 
-- **Chat Mode**: Engage in interactive conversations with the Claude model of your choice.
-- **Text Mode**: Submit text prompts and receive responses, ideal for scripting and automation.
-- **Vision Mode**: Process and analyze images with Claude's advanced vision capabilities.
-- **Streaming Support**: Utilize streaming responses for real-time interaction with models.
-- **Flexible Configuration**: Customize model parameters, including API keys, model selection, token limits, and more.
+## Key Features
+- **Chat Functionality**: Engage in interactive conversations with Anthropic's advanced conversational models.
+- **Image Captioning**: Analyze images to generate descriptive captions or insights.
+- **Text Generation**: Produce creative and contextually relevant text based on prompts.
+- **Command-Line Interface (CLI)**: Access the full suite of functionalities directly from the command line.
+- **Python Wrapper**: Simplify interaction with Anthropic's Claude models in only 2 lines of code.
+- **Streamed Responses**: Receive responses as they are generated for real-time interaction.
+- **Flexible Configuration**: Customize the token limits, safety thresholds, stop sequences, temperature and more.
+- **Minimal Dependencies**: Built to be efficient and lightweight, requiring only the `requests` package for operation.
 
 ## Prerequisites
 
@@ -49,64 +53,47 @@ The following Python packages are optional:
 - `python-dotenv`: For managing API keys and other environment variables.
 
 ## Installation
+To use the Claude AI Toolkit, clone the repository to your local machine and install the required Python packages.
 
 1. Clone the repository:
     ```shell
     git clone https://github.com/RMNCLDYO/claude-ai-toolkit.git
     ```
 
-2. Navigate to the folder
+2. Navigate to the repositories folder:
     ```shell
     cd claude-ai-toolkit
     ```
 
-3. Install the dependencies:
+3. Install the required dependencies:
     ```shell
     pip install -r requirements.txt
     ```
 
 ## Getting Started
 
-#### Obtaining an API Key
+## Configuration
 
-1. Sign up and verify your account at [Claude AI](https://console.anthropic.com/).
-2. Navigate to API Keys in your account settings.
-3. Click Create Key, name it, and save it securely.
-
-### Configuration (*Optional*)
-
-Create a .env file in the root directory and add your API key:
-```shell
-CLAUDE_API_KEY=your_api_key_here
-```
+1. Obtain an API key from [Claude AI](https://console.anthropic.com/).
+2. Create or rename the .env file in the project's root directory and add your API key:
+   ```makefile
+   CLAUDE_API_KEY=your_api_key
+   ```
 
 ## Usage
+The Claude AI Toolkit can be used in three different modes: `Chat`, `Text`, and `Vision`. Each mode is designed for specific types of interactions with the suite of models.
 
-### CLI
+### Chat Mode
+Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications. Chat mode supports multi-turn dialogues with the suite of models.
 
-*Chat with Claude*:
-```shell
+#### Example Usage
+
+***CLI***
+```bash
 python cli.py --chat
 ```
 
-*Ask a question*:
-```shell
-python cli.py --text --prompt "What is the meaning of life?"
-```
-
-*Describe an image*:
-```shell
-python cli.py --vision --prompt "Describe this image." --image "https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg"
-```
-
-*Get usage details and options*:
-```shell
-python cli.py --help
-```
-
-### Wrapper
-
-*Chat with Claude*:
+***Wrapper***
 ```python
 from claude import Chat
 
@@ -115,76 +102,81 @@ Chat().run()
 
 > An executable version of this example can be found [here](./examples/example_chat.py). (*You must move this file to the root folder before running the program.*)
 
-*Ask a question*:
+### Text Mode
+Text mode is suitable for generating text content based on a provided prompt.
+
+#### Example Usage
+
+***CLI***
+```bash
+python cli.py --text --prompt "Craft in depth lesson plans on any subject"
+```
+
+***Wrapper***
 ```python
 from claude import Text
 
-Text().run(prompt="What is the meaning of life?")
+Text().run(prompt="Craft in depth lesson plans on any subject")
 ```
 
 > An executable version of this example can be found [here](./examples/example_text.py). (*You must move this file to the root folder before running the program.*)
 
-*Describe an image*:
+### Vision Mode
+Vision mode allows for generating text based on a combination of text prompts and images.
+
+#### Example Usage
+
+***CLI***
+```bash
+python cli.py --vision --prompt "Describe this image." --image "image_path_or_url"
+```
+
+***Wrapper***
 ```python
 from claude import Vision
 
-Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg")
+Vision().run(prompt="Describe this image.", image="image_path_or_url")
 ```
 
 > An executable version of this example can be found [here](./examples/example_vision.py). (*You must move this file to the root folder before running the program.*)
 
-## Advanced Configuration
+## Stream Mode
+Enable streaming mode to receive responses as they are generated without waiting for the full response.
 
-### Wrapper Options
-| Option(s)        | Description                          | Example Usage                                    |
-|------------------|--------------------------------------|--------------------------------------------------|
-| `prompt`         | User prompt                          | prompt="Hello, how can I assist you today?"      |
-| `image`          | Image file path or url               | image="path_or_url_goes_here"                    |
-| `api_key`        | Claude API key for authentication    | api_key="api_key_goes_here"                      |
-| `model`          | The model you would like to use      | model="model_name_goes_here"                     |
-| `system_prompt`  | System prompt (instructions)         | system_prompt="You are an advanced AI assistant" |
-| `max_tokens`     | Maximum number of tokens to generate | max_tokens=1024                                  |
-| `stop_sequences` | Stop sequences for completion        | stop_sequences=["SAFTEY_WORD", "SAFTERY_WORD_2"] |
-| `stream`         | Enable streaming mode for responses  | stream=True                                      |
-| `temperature`    | Sampling temperature                 | temperature=0.7                                  |
-| `-top_p`         | Nucleus sampling threshold           | top_p=0.9                                        |
-| `top_k`          | Top-k sampling threshold             | top_k=40                                         |
+#### Example Usage
 
-### CLI Options
-| Option(s)                  | Description                          | Example Usage                                      |
-|----------------------------|--------------------------------------|----------------------------------------------------|
-| `-c`,  `--chat`            | Enable chat mode                     | --chat                                             |
-| `-t`,  `--text`            | Enable text mode                     | --text                                             |
-| `-v`,  `--vision`          | Enable vision mode                   | --vision                                           |
-| `-p`,  `--prompt`          | User prompt                          | --prompt "Hello, how can I assist you today?"      |
-| `-i`,  `--image`           | Image file path or url               | --image "path_or_url_goes_here"                    |
-| `-a`,  `--api_key`         | Claude API key for authentication    | --api_key "api_key_goes_here"                      |
-| `-m`,  `--model`           | The model you would like to use      | --model "model_name_goes_here"                     |
-| `-sp`, `--system_prompt`   | System prompt (instructions)         | --system_prompt "You are an advanced AI assistant" |
-| `-mt`, `--max_tokens`      | Maximum number of tokens to generate | --max_tokens 1024                                  |
-| `-ss`, `--stop_sequences`  | Stop sequences for completion        | --stop_sequences ["SAFTEY_WORD", "SAFTERY_WORD_2"] |
-| `-st`, `--stream`          | Enable streaming mode for responses  | --stream                                           |
-| `-tm`, `--temperature`     | Sampling temperature                 | --temperature 0.7                                  |
-| `-tp`, `--top_p`           | Nucleus sampling threshold           | --top_p 0.9                                        |
-| `-tk`, `--top_k`           | Top-k sampling threshold             | --top_k 40                                         |
-
-## Advanced Usage
-
-### CLI
-
-*Initiate a chat session passing your API key, with streaming mode set, and a custom system prompt*:
-```shell
-python cli.py --chat --api_key "your_api_key" --stream --system_prompt "You are a comedian, you respond to all questions as if they are a funny joke."
+***CLI***
+```bash
+python cli.py --chat --stream
 ```
 
-### Wrapper
-
-*Initiate a chat session using the Claude 3 Sonnet model, with top_p and max_tokens set to 100*:
+***Wrapper***
 ```python
 from claude import Chat
 
-Chat().run(model="claude-3-sonnet-20240229", max_tokens=100, top_p=0.9)
+Chat().run(stream=True)
 ```
+
+## Advanced Configuration
+
+### CLI and Wrapper Options
+
+| **Description**                  	| **CLI Flag(s)**              	| **CLI Usage**                                    	    | **Wrapper Usage**                                            	|
+|----------------------------------	|------------------------------	|------------------------------------------------------	|--------------------------------------------------------------	|
+| Enable chat mode                 	| `-c`,  `--chat`               | --chat                                           	    | *See mode usage above.*                                       |
+| Enable text mode                 	| `-t`,  `--text`               | --text                                           	    | *See mode usage above.*                                       |
+| Enable vision mode               	| `-v`,  `--vision`             | --vision                                         	    | *See mode usage above.*                                       |
+| User prompt                      	| `-p`,  `--prompt`            	| --prompt "Craft in depth lesson plans on any subject" | prompt="Craft in depth lesson plans on any subject"           |
+| Image file path or url           	| `-i`,  `--image`             	| --image "image_path_or_url"                  	        | prompt="Describe this image.", image="image_path_or_url"      |
+| API key for authentication       	| `-a`,  `--api_key`            | --api_key "your_api_key"                              | api_key="your_api_key"                                        |
+| Model to use                     	| `-m`,  `--model`              | --model "claude-3-opus-20240229"                      | model="claude-3-opus-20240229"                                |
+| System prompt (instructions)      | `-sp,  '--system_prompt`      | --system_prompt "You are an advanced AI assistant"    | system_prompt="You are an advanced AI assistant"              |
+| Enable streaming mode            	| `-s`,  `--stream`             | --stream                                         	    | stream=True                                                  	|
+| Maximum tokens to generate       	| `-mt`, `--max_tokens`        	| --max_tokens 1024                                	    | max_tokens=1024                                              	|
+| Sampling temperature             	| `-tm`, `--temperature`       	| --temperature 0.7                                	    | temperature=0.7                                              	|
+| Nucleus sampling threshold       	| `-tp`, `--top_p`             	| --top_p 0.9                                      	    | top_p=0.9                                                    	|
+| Top-k sampling threshold         	| `-tk`, `--top_k`             	| --top_k 40                                       	    | top_k=40                                                     	|
+| Stop sequences for completion    	| `-ss`, `--stop_sequences`    	| --stop_sequences ["\n", "."]                     	    | stop_sequences=["\n", "."]                                   	|
 
 ## Available Models
 
@@ -192,7 +184,7 @@ Chat().run(model="claude-3-sonnet-20240229", max_tokens=100, top_p=0.9)
 |-----------------	|----------------------------	|----------------	|
 | Claude 3 Opus   	| `claude-3-opus-20240229`   	| 4096 tokens    	|
 | Claude 3 Sonnet 	| `claude-3-sonnet-20240229` 	| 4096 tokens    	|
-| Claude 3 Haiku  	| Coming soon                	| 4096 tokens    	|
+| Claude 3 Haiku  	| `claude-3-haiku-20240307`     | 4096 tokens    	|
 
 ## API Rate Limits
 
