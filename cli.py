@@ -10,7 +10,7 @@ def main():
     ------------------------------------------------------------------
                             Claude AI Toolkit                          
                    API Wrapper & Command-line Interface               
-                          [v1.0.0] by @rmncldyo                      
+                          [v1.0.1] by @rmncldyo                      
     ------------------------------------------------------------------
 
     Claude AI toolit is an API wrapper and command-line interface for Anthropic's latest Claude 3 large-language models.
