@@ -186,16 +186,26 @@ Chat().run(stream=True)
 | Claude 3 Sonnet 	| `claude-3-sonnet-20240229` 	| 4096 tokens    	|
 | Claude 3 Haiku  	| `claude-3-haiku-20240307`     | 4096 tokens    	|
 
-## API Rate Limits
+## VisionAPI Limitations and Requirements:
 
-| **Usage tier** 	| **Requests per minute (RPM)** 	| **Tokens per minute (TPM)** 	| **Tokens per day (TPD)** 	|
-|----------------	|-------------------------------	|-----------------------------	|--------------------------	|
-| Free           	| 5                             	| 25,000                      	| 300,000                  	|
-| Build Tier 1   	| 50                            	| 50,000                      	| 1,000,000                	|
-| Build Tier 2   	| 1,000                         	| 100,000                     	| 2,500,000                	|
-| Build Tier 3   	| 2,000                         	| 200,000                     	| 5,000,000                	|
-| Build Tier 4   	| 4,000                         	| 400,000                     	| 10,000,000               	|
-| Scale          	| Custom                        	| Custom                      	| Custom                   	|
+#### Supported ***MIME*** types: `JPEG`, `PNG`, `GIF`, and `WEBP`.
+
+For optimal performance, Anthropic recommends resizing your images before uploading if it is likely to exceed size or token limits. If your image's long edge is more than 1568 pixels, or your image is more than ~1600 tokens, it will first be scaled down, preserving aspect ratio, until it is within size limits. If your input image is too large and needs to be resized, it will increase latency of time-to-first-token, without giving you any additional model performance. Very small images under 200 pixels on any given edge may lead to degraded performance.
+
+> If you want to improve time-to-first-token, Anthropic recommends resizing your images to no more than 1.15 megapixels (and within 1568 pixels in both dimensions).
+
+When providing images to Claude, keep the following guidelines in mind for best results:
+- Image clarity: Ensure your images are clear and not too blurry or pixelated. Claude may struggle to accurately interpret unclear or low-quality images.
+- Text: If your image contains important text, make sure it is legible and not too small. However, avoid cropping out key visual context just to enlarge the text.
+
+Here is a table of maximum image sizes accepted, that will not be resized for common aspect ratios. All these images approximate out to around ~1600 tokens and ~$4.80/1K images (assuming the use of Claude 3 Sonnet):
+| **Aspect ratio** 	| **Image size** 	|
+|------------------	|----------------	|
+| 1:1              	| 1092x1092 px   	|
+| 3:4              	| 951x1268 px    	|
+| 2:3              	| 896x1344 px    	|
+| 9:16             	| 819x1456 px    	|
+| 1:2              	| 784x1568 px    	|
 
 ## Contributing
 Contributions are welcome!
