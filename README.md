@@ -83,7 +83,7 @@ To use the Claude AI Toolkit, clone the repository to your local machine and ins
 ## Usage
 The Claude AI Toolkit can be used in three different modes: `Chat`, `Text`, and `Vision`. Each mode is designed for specific types of interactions with the suite of models.
 
-### Chat Mode
+## Chat Mode
 Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications. Chat mode supports multi-turn dialogues with the suite of models.
 
 #### Example Usage
@@ -102,7 +102,7 @@ Chat().run()
 
 > An executable version of this example can be found [here](./examples/example_chat.py). (*You must move this file to the root folder before running the program.*)
 
-### Text Mode
+## Text Mode
 Text mode is suitable for generating text content based on a provided prompt.
 
 #### Example Usage
@@ -121,7 +121,7 @@ Text().run(prompt="Craft in depth lesson plans on any subject")
 
 > An executable version of this example can be found [here](./examples/example_text.py). (*You must move this file to the root folder before running the program.*)
 
-### Vision Mode
+## Vision Mode
 Vision mode allows for generating text based on a combination of text prompts and images.
 
 #### Example Usage
