@@ -42,8 +42,8 @@ The Claude AI Toolkit provides a comprehensive (lightweight) API wrapper and com
 - **Minimal Dependencies**: Built to be efficient and lightweight, requiring only the `requests` package for operation.
 
 ## Prerequisites
-
-- Python 3.6+
+- `Python 3.x`
+- An API key from Anthropic
 
 ## Dependencies
 The following Python packages are required:
