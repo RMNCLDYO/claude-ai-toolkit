@@ -74,7 +74,7 @@ To use the Claude AI Toolkit, clone the repository to your local machine and ins
 
 ## Configuration
 
-1. Obtain an API key from [Claude AI](https://console.anthropic.com/).
+1. Obtain an API key from [Anthropic](https://console.anthropic.com/).
 2. Create or rename the .env file in the project's root directory and add your API key:
    ```makefile
    CLAUDE_API_KEY=your_api_key
