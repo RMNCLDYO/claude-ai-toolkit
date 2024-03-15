@@ -1,3 +1,3 @@
 from claude import Text
 
-Text().run(prompt="What is the meaning of life?")
+Text().run(prompt="Craft in depth lesson plans on any subject")
