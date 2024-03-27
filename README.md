@@ -29,8 +29,6 @@
 
 The Claude AI Toolkit makes it easy to use Anthropic's Claude 3 'Opus', 'Sonnet' and 'Haiku' language models for creating chatbots, generating text, and analyzing images. It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
-## Features
-
 ## Key Features
 - **Chat Functionality**: Engage in interactive conversations with Anthropic's advanced conversational models.
 - **Image Captioning**: Analyze images to generate descriptive captions or insights.
