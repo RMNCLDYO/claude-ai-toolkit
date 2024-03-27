@@ -53,20 +53,20 @@ The following Python packages are optional:
 ## Installation
 To use the Claude AI Toolkit, clone the repository to your local machine and install the required Python packages.
 
-1. Clone the repository:
-    ```shell
-    git clone https://github.com/RMNCLDYO/claude-ai-toolkit.git
-    ```
+Clone the repository:
+```shell
+git clone https://github.com/RMNCLDYO/claude-ai-toolkit.git
+```
 
-2. Navigate to the repositories folder:
-    ```shell
-    cd claude-ai-toolkit
-    ```
+Navigate to the repositories folder:
+```shell
+cd claude-ai-toolkit
+```
 
-3. Install the required dependencies:
-    ```shell
-    pip install -r requirements.txt
-    ```
+Install the required dependencies:
+```shell
+pip install -r requirements.txt
+```
 
 ## Getting Started
 
