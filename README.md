@@ -68,8 +68,6 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-## Getting Started
-
 ## Configuration
 
 1. Obtain an API key from [Anthropic](https://console.anthropic.com/).
