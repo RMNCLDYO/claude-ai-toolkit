@@ -110,7 +110,7 @@ pip install -r requirements.txt
 The Claude AI Toolkit can be used in three different modes: `Chat`, `Text`, and `Vision`. Each mode is designed for specific types of interactions with the suite of models.
 
 ## Chat Mode
-Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications. Chat mode supports multi-turn dialogues with the suite of models.
+Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications.
 
 #### Example Usage
 
@@ -189,11 +189,11 @@ Vision().run(prompt="Describe this image", image="https://upload.wikimedia.org/w
 
 ## Available Models
 
-| **Model**       	| **Latest API model name**  	| **Max Tokens** 	|
-|-----------------	|----------------------------	|----------------	|
-| Claude 3 Opus   	| `claude-3-opus-20240229`   	| 4096 tokens    	|
-| Claude 3 Sonnet 	| `claude-3-sonnet-20240229` 	| 4096 tokens    	|
-| Claude 3 Haiku  	| `claude-3-haiku-20240307`     | 4096 tokens    	|
+| **Model Name**             | **Max Tokens** |
+|----------------------------|----------------|
+| `claude-3-opus-20240229`   | 4096 tokens    |
+| `claude-3-sonnet-20240229` | 4096 tokens    |
+| `claude-3-haiku-20240307`  | 4096 tokens    |
 
 ## Vision Mode Requirements & Suggestions:
 
