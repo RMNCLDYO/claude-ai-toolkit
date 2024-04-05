@@ -169,23 +169,22 @@ Vision().run(prompt="Describe this image", image="https://upload.wikimedia.org/w
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
-
-| **Description**                  	| **CLI Flag(s)**              	| **CLI Usage**                                    	    | **Wrapper Usage**                                            	|
-|----------------------------------	|------------------------------	|------------------------------------------------------	|--------------------------------------------------------------	|
-| Enable chat mode                 	| `-c`,  `--chat`               | --chat                                           	    | *See mode usage above.*                                       |
-| Enable text mode                 	| `-t`,  `--text`               | --text                                           	    | *See mode usage above.*                                       |
-| Enable vision mode               	| `-v`,  `--vision`             | --vision                                         	    | *See mode usage above.*                                       |
-| User prompt                      	| `-p`,  `--prompt`            	| --prompt "Craft in depth lesson plans on any subject" | prompt="Craft in depth lesson plans on any subject"           |
-| Image file path or url           	| `-i`,  `--image`             	| --image "image_path_or_url"                  	        | prompt="Describe this image.", image="image_path_or_url"      |
-| API key for authentication       	| `-a`,  `--api_key`            | --api_key "your_api_key"                              | api_key="your_api_key"                                        |
-| Model to use                     	| `-m`,  `--model`              | --model "claude-3-opus-20240229"                      | model="claude-3-opus-20240229"                                |
-| System prompt (instructions)      | `-sp,  '--system_prompt`      | --system_prompt "You are an advanced AI assistant"    | system_prompt="You are an advanced AI assistant"              |
-| Enable streaming mode            	| `-s`,  `--stream`             | --stream                                         	    | stream=True                                                  	|
-| Maximum tokens to generate       	| `-mt`, `--max_tokens`        	| --max_tokens 1024                                	    | max_tokens=1024                                              	|
-| Sampling temperature             	| `-tm`, `--temperature`       	| --temperature 0.7                                	    | temperature=0.7                                              	|
-| Nucleus sampling threshold       	| `-tp`, `--top_p`             	| --top_p 0.9                                      	    | top_p=0.9                                                    	|
-| Top-k sampling threshold         	| `-tk`, `--top_k`             	| --top_k 40                                       	    | top_k=40                                                     	|
-| Stop sequences for completion    	| `-ss`, `--stop_sequences`    	| --stop_sequences ["\n", "."]                     	    | stop_sequences=["\n", "."]                                   	|
+| **Description**               | **CLI Flags**             | **CLI Usage**                                         | **Wrapper Usage**                                       |
+|-------------------------------|---------------------------|-------------------------------------------------------|---------------------------------------------------------|
+| Enable chat mode              | `-c`,  `--chat`           | --chat                                                | *See mode usage above.*                                 |
+| Enable text mode              | `-t`,  `--text`           | --text                                                | *See mode usage above.*                                 |
+| Enable vision mode            | `-v`,  `--vision`         | --vision                                              | *See mode usage above.*                                 |
+| User prompt                   | `-p`,  `--prompt`         | --prompt "Craft in depth lesson plans on any subject" | prompt="Craft in depth lesson plans on any subject"     |
+| Image file path or url        | `-i`,  `--image`          | --image "image_path_or_url"                           | prompt="Describe this image", image="image_path_or_url" |
+| API key for authentication    | `-a`,  `--api_key`        | --api_key "your_api_key"                              | api_key="your_api_key"                                  |
+| Model name                    | `-m`,  `--model`          | --model "claude-3-opus-20240229"                      | model="claude-3-opus-20240229"                          |
+| Enable streaming mode         | `-s`,  `--stream`         | --stream                                              | stream=True                                             |
+| System prompt (instructions)  | `-sp,  '--system_prompt`  | --system_prompt "You are an advanced AI assistant"    | system_prompt="You are an advanced AI assistant"        |
+| Maximum tokens to generate    | `-mt`, `--max_tokens`     | --max_tokens 1024                                     | max_tokens=1024                                         |
+| Sampling temperature          | `-tm`, `--temperature`    | --temperature 0.7                                     | temperature=0.7                                         |
+| Nucleus sampling threshold    | `-tp`, `--top_p`          | --top_p 0.9                                           | top_p=0.9                                               |
+| Top-k sampling threshold      | `-tk`, `--top_k`          | --top_k 40                                            | top_k=40                                                |
+| Stop sequences for completion | `-ss`, `--stop_sequences` | --stop_sequences ["\n", "."]                          | stop_sequences=["\n", "."]                              |
 
 ## Available Models
 
@@ -197,7 +196,7 @@ Vision().run(prompt="Describe this image", image="https://upload.wikimedia.org/w
 
 ## Vision Mode Requirements & Suggestions:
 
-#### Supported ***MIME*** types: `JPEG`, `PNG`, `GIF`, and `WEBP`.
+#### Supported ***MIME*** *(image)* types: `JPEG`, `PNG`, `GIF`, and `WEBP`.
 
 For optimal performance, Anthropic recommends resizing your images before uploading if it is likely to exceed size or token limits. If your image's long edge is more than 1568 pixels, or your image is more than ~1600 tokens, it will first be scaled down, preserving aspect ratio, until it is within size limits. If your input image is too large and needs to be resized, it will increase latency of time-to-first-token, without giving you any additional model performance. Very small images under 200 pixels on any given edge may lead to degraded performance.
 
