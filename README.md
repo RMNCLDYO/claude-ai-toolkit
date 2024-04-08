@@ -54,17 +54,17 @@ The following Python packages are optional:
 To use the Claude AI Toolkit, clone the repository to your local machine and install the required Python packages.
 
 Clone the repository:
-```shell
+```bash
 git clone https://github.com/RMNCLDYO/claude-ai-toolkit.git
 ```
 
 Navigate to the repositories folder:
-```shell
+```bash
 cd claude-ai-toolkit
 ```
 
 Install the required dependencies:
-```shell
+```bash
 pip install -r requirements.txt
 ```
 
@@ -78,7 +78,7 @@ pip install -r requirements.txt
    - **Setting it as an environment variable on your device (recommended for everyday use)**
        - Navigate to your terminal.
        - Add your API key like so:
-         ```shell
+         ```bash
          export CLAUDE_API_KEY=your_api_key
          ```
        This method allows the API key to be loaded automatically when using the wrapper or CLI.
@@ -96,11 +96,11 @@ pip install -r requirements.txt
        - If you prefer not to use a `.env` file, you can directly pass your API key as an argument to the CLI or the wrapper functions.
          
          ***CLI***
-         ```shell
+         ```bash
          --api_key your_api_key
          ```
          ***Wrapper***
-         ```shell
+         ```bash
          api_key="your_api_key"
          ```
        This method requires manually inputting your API key each time you initiate an API call, ensuring flexibility for different deployment environments.
