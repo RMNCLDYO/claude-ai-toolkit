@@ -154,14 +154,14 @@ Vision mode allows for generating text based on a combination of text prompts an
 
 ***CLI***
 ```bash
-python cli.py --vision --prompt "Describe this image:" --image "https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg"
+python cli.py --vision --prompt "Describe this image." --image "https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg"
 ```
 
 ***Wrapper***
 ```python
 from claude import Vision
 
-Vision().run(prompt="Describe this image:", image="https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg")
+Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg")
 ```
 
 > An executable version of this example can be found [here](./examples/example_vision.py). (*You must move this file to the root folder before running the program.*)
@@ -190,7 +190,7 @@ Vision().run(prompt="Describe this image:", image="https://upload.wikimedia.org/
 
 ## Available Models
 
-| **Model Name**             | **Max Tokens** |
+| **Model**                  | **Max Tokens** |
 |----------------------------|----------------|
 | `claude-3-opus-20240229`   | 4096           |
 | `claude-3-sonnet-20240229` | 4096           |
