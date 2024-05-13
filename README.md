@@ -169,22 +169,22 @@ Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
-| **Description**               | **CLI Flags**             | **CLI Usage**                                       | **Wrapper Usage**                                        |
-|-------------------------------|---------------------------|-----------------------------------------------------|----------------------------------------------------------|
-| Enable chat mode              | `-c`,  `--chat`           | --chat                                              | *See mode usage above.*                                  |
-| Enable text mode              | `-t`,  `--text`           | --text                                              | *See mode usage above.*                                  |
-| Enable vision mode            | `-v`,  `--vision`         | --vision                                            | *See mode usage above.*                                  |
-| User prompt                   | `-p`,  `--prompt`         | --prompt "Write a haiku about robots."              | prompt="Write a haiku about robots."                     |
-| Image file path or url        | `-i`,  `--image`          | --image "image_path_or_url"                         | prompt="Describe this image.", image="image_path_or_url" |
-| API key for authentication    | `-a`,  `--api_key`        | --api_key "your_api_key"                            | api_key="your_api_key"                                   |
-| Model name                    | `-m`,  `--model`          | --model "claude-3-opus-20240229"                    | model="claude-3-opus-20240229"                           |
-| Enable streaming mode         | `-s`,  `--stream`         | --stream                                            | stream=True                                              |
-| System prompt (instructions)  | `-sp,  '--system_prompt`  | --system_prompt "You are an advanced AI assistant." | system_prompt="You are an advanced AI assistant."        |
-| Maximum tokens to generate    | `-mt`, `--max_tokens`     | --max_tokens 1024                                   | max_tokens=1024                                          |
-| Sampling temperature          | `-tm`, `--temperature`    | --temperature 0.7                                   | temperature=0.7                                          |
-| Nucleus sampling threshold    | `-tp`, `--top_p`          | --top_p 0.9                                         | top_p=0.9                                                |
-| Top-k sampling threshold      | `-tk`, `--top_k`          | --top_k 40                                          | top_k=40                                                 |
-| Stop sequences for completion | `-ss`, `--stop_sequences` | --stop_sequences ["\n", "."]                        | stop_sequences=["\n", "."]                               |
+| **Description**               | **CLI Flags**             | **CLI Usage**                                               | **Wrapper Usage**                                        |
+|-------------------------------|---------------------------|-------------------------------------------------------------|----------------------------------------------------------|
+| Enable chat mode              | `-c`,  `--chat`           | --chat                                                      | *See mode usage above.*                                  |
+| Enable text mode              | `-t`,  `--text`           | --text                                                      | *See mode usage above.*                                  |
+| Enable vision mode            | `-v`,  `--vision`         | --vision                                                    | *See mode usage above.*                                  |
+| User prompt                   | `-p`,  `--prompt`         | --prompt "Write a haiku about robots."                      | prompt="Write a haiku about robots."                     |
+| Image file path or url        | `-i`,  `--image`          | --prompt "Describe this image." --image "image_path_or_url" | prompt="Describe this image.", image="image_path_or_url" |
+| API key for authentication    | `-a`,  `--api_key`        | --api_key "your_api_key"                                    | api_key="your_api_key"                                   |
+| Model name                    | `-m`,  `--model`          | --model "claude-3-opus-20240229"                            | model="claude-3-opus-20240229"                           |
+| Enable streaming mode         | `-s`,  `--stream`         | --stream                                                    | stream=True                                              |
+| System prompt (instructions)  | `-sp,  '--system_prompt`  | --system_prompt "You are an advanced AI assistant."         | system_prompt="You are an advanced AI assistant."        |
+| Maximum tokens to generate    | `-mt`, `--max_tokens`     | --max_tokens 1024                                           | max_tokens=1024                                          |
+| Sampling temperature          | `-tm`, `--temperature`    | --temperature 0.7                                           | temperature=0.7                                          |
+| Nucleus sampling threshold    | `-tp`, `--top_p`          | --top_p 0.9                                                 | top_p=0.9                                                |
+| Top-k sampling threshold      | `-tk`, `--top_k`          | --top_k 40                                                  | top_k=40                                                 |
+| Stop sequences for completion | `-ss`, `--stop_sequences` | --stop_sequences ["\n", "."]                                | stop_sequences=["\n", "."]                               |
 
 > *To exit the program at any time, you can type **`exit`** or **`quit`**. This command works similarly whether you're interacting with the program via the CLI or through the Python wrapper ensuring that you can easily and safely conclude your work with the Claude AI Toolkit without having to resort to interrupt signals or forcibly closing the terminal or command prompt.*
 
