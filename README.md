@@ -32,7 +32,7 @@ The Claude AI Toolkit makes it easy to use Anthropic's Claude 3 'Opus', 'Sonnet'
 ## Key Features
 - **Conversational AI**: Create interactive, real-time chat experiences (chatbots) or AI assistants.
 - **Image Captioning**: Generate detailed descriptions and insights or create captions from images.
-- **Text Creation**: Produce coherent and contextually relevant text and answers from simple prompts.
+- **Text Generation**: Produce coherent and contextually relevant text and answers from simple prompts.
 - **Highly Customizable**: Tailor settings like streaming output, system prompts, sampling temperature and more to suit your specific requirements.
 - **Lightweight Integration**: Efficiently designed with minimal dependencies, requiring only the `requests` package for core functionality.
 
