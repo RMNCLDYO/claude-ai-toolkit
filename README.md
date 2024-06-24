@@ -27,7 +27,7 @@
 
 ## Overview
 
-The Claude AI Toolkit makes it easy to use Anthropic's Claude 3 'Opus', 'Sonnet' and 'Haiku' language models for creating chatbots, generating text, and analyzing images. It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
+The Claude AI Toolkit makes it easy to use Anthropic's latest Claude 3.5 'Sonnet' model, along with the Claude 3 'Opus', 'Sonnet' and 'Haiku' language models for creating chatbots, generating text, and analyzing images. It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
 ## Key Features
 - **Conversational AI**: Create interactive, real-time chat experiences (chatbots) or AI assistants.
@@ -187,11 +187,12 @@ Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/
 
 ## Available Models
 
-| **Model**                  | **Max Tokens** |
-|----------------------------|----------------|
-| `claude-3-opus-20240229`   | 4096           |
-| `claude-3-sonnet-20240229` | 4096           |
-| `claude-3-haiku-20240307`  | 4096           |
+| **Model**                    | **Max Tokens** |
+|------------------------------|----------------|
+| `claude-3-5-sonnet-20240620` | 4096           |
+| `claude-3-opus-20240229`     | 4096           |
+| `claude-3-sonnet-20240229`   | 4096           |
+| `claude-3-haiku-20240307`    | 4096           |
 
 ## Vision Mode Requirements & Suggestions:
 
