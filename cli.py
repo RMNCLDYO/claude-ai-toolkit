@@ -10,10 +10,10 @@ def main():
     ------------------------------------------------------------------
                             Claude AI Toolkit                          
                    API Wrapper & Command-line Interface               
-                          [v1.0.1] by @rmncldyo                      
+                          [v1.0.2] by @rmncldyo                      
     ------------------------------------------------------------------
 
-    Claude AI toolit is an API wrapper and command-line interface for Anthropic's latest Claude 3 large-language models.
+    Claude AI toolit is an API wrapper and command-line interface for Anthropic's latest Claude 3.5 large-language models.
 
     | **Description**               	| **CLI Flag(s)**           	| **CLI Usage**                                         	|
     |-------------------------------	|---------------------------	|-------------------------------------------------------	|
@@ -23,7 +23,7 @@ def main():
     | User prompt                   	| `-p`,  `--prompt`         	| --prompt "Craft in depth lesson plans on any subject" 	|
     | Image file path or url        	| `-i`,  `--image`          	| --image "image_path_or_url"                           	|
     | API key for authentication    	| `-a`,  `--api_key`        	| --api_key "your_api_key"                              	|
-    | Model to use                  	| `-m`,  `--model`          	| --model "claude-3-opus-20240229"                      	|
+    | Model to use                  	| `-m`,  `--model`          	| --model "claude-3-5-sonnet-20240620"                      |
     | Enable streaming mode         	| `-s`,  `--stream`         	| --stream                                              	|
     | System prompt (instructions)  	| `-sp,  '--system_prompt`  	| --system_prompt "You are an advanced AI assistant"    	|
     | Maximum tokens to generate    	| `-mt`, `--max_tokens`     	| --max_tokens 1024                                     	|
@@ -41,7 +41,7 @@ def main():
     parser.add_argument('-p', '--prompt', type=str, help='Text or Vision prompt', metavar='')
     parser.add_argument('-i', '--image', type=str, help='Image file path or url', metavar='')
     parser.add_argument('-a', '--api_key', type=str, help='Claude API key for authentication', metavar='')
-    parser.add_argument('-m', '--model', type=str, default='claude-3-opus-20240229', help='The model you would like to use', metavar='')
+    parser.add_argument('-m', '--model', type=str, default='claude-3-5-sonnet-20240620', help='The model you would like to use', metavar='')
     parser.add_argument('-s', '--stream', action='store_true', help='Enable streaming mode for responses')
     parser.add_argument('-sp', '--system_prompt', type=str, help='Initial system prompt (instructions)', metavar='')
     parser.add_argument('-mt', '--max_tokens', type=int, help='Maximum number of tokens to generate', metavar='')
