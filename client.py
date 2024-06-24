@@ -6,7 +6,7 @@ from loading import Loading
 print("------------------------------------------------------------------\n")
 print("                         Claude AI Toolkit                        \n")     
 print("               API Wrapper & Command-line Interface               \n")   
-print("                       [v1.0.0] by @rmncldyo                      \n")  
+print("                       [v1.0.2] by @rmncldyo                      \n")  
 print("------------------------------------------------------------------\n")
 
 class Client:
@@ -14,17 +14,18 @@ class Client:
         self.config = load_config(api_key=api_key)
         self.api_key = api_key if api_key else self.config.get('api_key')
         self.base_url = self.config.get('base_url')
-        self.version = self.config.get('version')
+        self.claude_version = self.config.get('claude_version')
+        self.anthropic_version = self.config.get('anthropic_version')
         self.timeout = self.config.get('timeout')
         self.headers = {
-            "anthropic-version": "2023-06-01",
+            "anthropic-version": self.anthropic_version,
             "content-type": "application/json",
             "x-api-key": self.api_key
         }
 
     def post(self, endpoint, data):
         loading = Loading()
-        url = f"{self.base_url}/{self.version}/{endpoint}"
+        url = f"{self.base_url}/{self.claude_version}/{endpoint}"
         try:
             loading.start()
             response = requests.post(url, headers=self.headers, json=data)
@@ -44,7 +45,7 @@ class Client:
 
     def stream_post(self, endpoint, data):
         loading = Loading()
-        url = f"{self.base_url}/{self.version}/{endpoint}"
+        url = f"{self.base_url}/{self.claude_version}/{endpoint}"
         full_response = []
         try:
             loading.start()
