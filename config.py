@@ -24,9 +24,10 @@ def load_config(api_key=None):
     
     return {
         'api_key': api_key,
-        'model': os.getenv('CLAUDE_MODEL', 'claude-3-opus-20240229'),
+        'model': os.getenv('CLAUDE_MODEL', 'claude-3-5-sonnet-20240620'),
         'base_url': os.getenv('CLAUDE_BASE_URL', 'https://api.anthropic.com'),
         'messages_endpoint': os.getenv('CLAUDE_MESSAGES_ENDPOINT', 'messages'),
         'timeout': int(os.getenv('CLAUDE_TIMEOUT', 20)),
-        'version': os.getenv('CLAUDE_VERSION', 'v1')
+        'claude_version': os.getenv('CLAUDE_VERSION', 'v1'),
+        'anthropic_version': os.getenv('ANTHROPIC_VERSION', '2023-06-01')
     }
