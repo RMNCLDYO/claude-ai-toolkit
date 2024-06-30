@@ -174,7 +174,7 @@ Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/
 | User prompt                   | `-p`,  `--prompt`         | --prompt "Write a haiku about robots."                      | prompt="Write a haiku about robots."                     |
 | Image file path or url        | `-i`,  `--image`          | --prompt "Describe this image." --image "image_path_or_url" | prompt="Describe this image.", image="image_path_or_url" |
 | API key for authentication    | `-a`,  `--api_key`        | --api_key "your_api_key"                                    | api_key="your_api_key"                                   |
-| Model name                    | `-m`,  `--model`          | --model "claude-3-opus-20240229"                            | model="claude-3-opus-20240229"                           |
+| Model name                    | `-m`,  `--model`          | --model "claude-3-5-sonnet-20240620"                        | model="claude-3-5-sonnet-20240620"                       |
 | Enable streaming mode         | `-s`,  `--stream`         | --stream                                                    | stream=True                                              |
 | System prompt (instructions)  | `-sp,  '--system_prompt`  | --system_prompt "You are an advanced AI assistant."         | system_prompt="You are an advanced AI assistant."        |
 | Maximum tokens to generate    | `-mt`, `--max_tokens`     | --max_tokens 1024                                           | max_tokens=1024                                          |
