@@ -16,7 +16,6 @@ class Client:
         self.base_url = self.config.get('base_url')
         self.claude_version = self.config.get('claude_version')
         self.anthropic_version = self.config.get('anthropic_version')
-        self.timeout = self.config.get('timeout')
         self.headers = {
             "anthropic-version": self.anthropic_version,
             "content-type": "application/json",
