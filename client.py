@@ -34,7 +34,7 @@ class Client:
                 return response
             except:
                 loading.stop()
-                print(f"\nError: {response['error']["message"]}")
+                print(f"\nError: {response['error']['message']}")
                 exit(1)
         except Exception as e:
             print(f"HTTP Error: {e}")
