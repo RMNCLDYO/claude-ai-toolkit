@@ -25,6 +25,9 @@
     </a>
 </p>
 
+> [!NOTE]
+> *This toolkit supports Anthropic's newest Claude Sonnet 3.5 model (as of October 22, 2024)*
+
 ## Overview
 
 The Claude AI Toolkit makes it easy to use Anthropic's latest Claude 3.5 'Sonnet' model, along with the Claude 3 'Opus', 'Sonnet' and 'Haiku' language models for creating chatbots, generating text, and analyzing images. It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
@@ -174,7 +177,7 @@ Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/
 | User prompt                   | `-p`,  `--prompt`         | --prompt "Write a haiku about robots."                      | prompt="Write a haiku about robots."                     |
 | Image file path or url        | `-i`,  `--image`          | --prompt "Describe this image." --image "image_path_or_url" | prompt="Describe this image.", image="image_path_or_url" |
 | API key for authentication    | `-a`,  `--api_key`        | --api_key "your_api_key"                                    | api_key="your_api_key"                                   |
-| Model name                    | `-m`,  `--model`          | --model "claude-3-5-sonnet-20240620"                        | model="claude-3-5-sonnet-20240620"                       |
+| Model name                    | `-m`,  `--model`          | --model "claude-3-5-sonnet-20241022"                        | model="claude-3-5-sonnet-20241022"                       |
 | Enable streaming mode         | `-s`,  `--stream`         | --stream                                                    | stream=True                                              |
 | System prompt (instructions)  | `-sp,  '--system_prompt`  | --system_prompt "You are an advanced AI assistant."         | system_prompt="You are an advanced AI assistant."        |
 | Maximum tokens to generate    | `-mt`, `--max_tokens`     | --max_tokens 1024                                           | max_tokens=1024                                          |
@@ -189,9 +192,8 @@ Vision().run(prompt="Describe this image.", image="https://upload.wikimedia.org/
 
 | **Model**                    | **Max Tokens** |
 |------------------------------|----------------|
-| `claude-3-5-sonnet-20240620` | 4096           |
+| `claude-3-5-sonnet-20241022` | 4096           |
 | `claude-3-opus-20240229`     | 4096           |
-| `claude-3-sonnet-20240229`   | 4096           |
 | `claude-3-haiku-20240307`    | 4096           |
 
 ## Vision Mode Requirements & Suggestions:
